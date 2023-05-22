@@ -10,33 +10,31 @@ class Pojistenci:
         self.tel_cislo = tel_cislo
 
     def pridat_pojistence():
-            print("Zadejte jméno pojistejného:")
-            jmeno = input()
+        print("Zadejte jméno pojistejného:")
+        jmeno = input()
 
-            print("Zadejte prijmeni:")
-            prijmeni = input()
+        print("Zadejte prijmeni:")
+        prijmeni = input()
 
-            print("Zadejte telefonni cislo:")
-            tel_cislo = input()
-            if tel_cislo.isnumeric():
+        print("Zadejte telefonni cislo:")
+        tel_cislo = input()
+        if tel_cislo.isnumeric():
 
-                print("Zadejte vek:")
-                vek = input()
-                if vek.isnumeric():
-            
-                    print("\nData byla ulozena!\n")
+            print("Zadejte vek:")
+            vek = input()
+            if vek.isnumeric():
 
-                    novy_pojistenec = Pojistenci(jmeno, prijmeni, vek, tel_cislo)
+                print("\nData byla ulozena!\n")
 
-                    return novy_pojistenec
-                else:
-                    chybove_hlasky.neplatna_hodnota()
-                    return
+                novy_pojistenec = Pojistenci(jmeno, prijmeni, vek, tel_cislo)
+
+                return novy_pojistenec
             else:
                 chybove_hlasky.neplatna_hodnota()
                 return
-
-        
+        else:
+            chybove_hlasky.neplatna_hodnota()
+            return
 
     def __str__(self):
         return "{0:<10} {1:<15} {2:<10} {3:<10}".format(self.jmeno, self.prijmeni, self.vek, self.tel_cislo)
@@ -53,4 +51,3 @@ class Pojistenci:
                 self.tel_cislo = nova_hodnota
             case "other":
                 chybove_hlasky.neplatna_hodnota()
-            

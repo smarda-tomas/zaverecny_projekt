@@ -3,7 +3,6 @@ import chybove_hlasky
 
 
 def pridat_noveho_pojistence():
-    
     pojistenec = Pojistenci.pridat_pojistence()
     if isinstance(pojistenec, Pojistenci):
         seznam_pojistencu.append(pojistenec)
@@ -49,6 +48,8 @@ def editace_pojisteneho():
         if osoba.tel_cislo == tel_cislo:
             print("Co si prejete upravit? 1 - Jmeno, 2 - Prijmeni, 3 - Vek, 4 - Telefonni cislo")
             index = input()
+
+            #overeni spravnosti inputu
             if index.isnumeric():
                 if int(index) > 4 or int(index) < 0:
                     chybove_hlasky.neplatna_hodnota()
