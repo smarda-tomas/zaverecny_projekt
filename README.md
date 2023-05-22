@@ -1,3 +1,3 @@
 # zaverecny_projekt
-projekt
+projekt konzolová aplikace
 
